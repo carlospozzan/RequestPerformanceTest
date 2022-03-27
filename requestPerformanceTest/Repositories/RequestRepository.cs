@@ -1,4 +1,5 @@
-﻿using RequestPerformanceFramework.Models;
+﻿using RequestPerformanceFramework;
+using RequestPerformanceFramework.Models;
 
 namespace requestPerformanceTest.Repositories
 {
@@ -6,11 +7,7 @@ namespace requestPerformanceTest.Repositories
     {
         public Response GetResponse()
         {
-            Task.Delay(TimeSpan.FromSeconds(10)).Wait();
-            return new Response()
-            {
-                Id = Guid.NewGuid()
-            };
+            return ResponseGenerator.GetResponse();
         }
     }
 }
